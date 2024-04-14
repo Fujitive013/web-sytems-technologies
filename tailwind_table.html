@@ -53,44 +53,24 @@
 </div>
 </form>
             </div>
-            <div
-            class="flex m-2 ml-2 mt-10 bg-white rounded-lg shadow-lg w-9/12 h-96">
+            <div class="flex m-2 ml-2 mt-10 bg-white rounded-lg shadow-lg w-9/12 h-96 overflow-auto">
             <div class="items-center w-11/12">
-                <table class="w-full m-7 ml-14 mr-14" id="userTable">
+                <table class="w-full m-7 ml-14 mr-14 table-auto" id="userTable">
                 <thead>
                 <tr>
-                    <th>User List</th>
+                    <th class="text-center text-xl">User List</th>
                 </tr>
                 </thead>
                 <tbody id="tableBody">
                 <tr >
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                </tr>
-                <tr class="border border-black">
-                    <td class=" p-1 text-center">1</td>
-                    <td class=" p-1 border border-black" class="userID">Ronalyn Anne Padilla</td>
-                    <td class=" p-1 border border-black">ronalyn.padilla@gmail.com</td>
-                    <td class=" p-1 border border-black">Admin</td>
-                    <td class=" p-1 border border-black">
-                        <button><i class='fa fa-edit' style='font: size 20px;  color:blue'></i></button>
-                        <button><i class="fa fa-trash-o p-1" style="font-size:18px;color:red"></i></button></td>
-                </tr>
-                <tr ><td class=" p-1 text-center border border-black" class="userID">2</td>
-                    <td class=" p-1 border border-black">Ronalyn Test</td>
-                    <td class=" p-1 border border-black">ronalyn.test@gmail.com</td>
-                    <td class=" p-1 border border-black">User</td>
-                    <td class=" p-1 border border-black">
-                        <button><i class='fa fa-edit'  id="editBtn" style='font: size 20px; color:blue'></i></button>
-                        <button><i class="fa fa-trash-o p-1" id="deleteBtn" style="font-size:18px;color:red"></i></button>
-                        </td>
+                    <th class=" p-1 border border-black">ID</th>
+                    <th class=" p-1 border border-black">Name</th>
+                    <th class=" p-1 border border-black">Email</th>
+                    <th class=" p-1 border border-black">Role</th>
+                    <th class=" p-1 border border-black">Actions</th>
                 </tr>
             </tbody>
             </table></div>
-            
         </div>
         <script src="tailwind_table.js"></script>
     </body>   

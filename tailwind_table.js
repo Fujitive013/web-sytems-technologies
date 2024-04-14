@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const registrationForm = document.getElementById("registerForm");
     const registrationBody = document.getElementById("tableBody");
+    const userTable = document.getElementById("userTable");
 
     registrationForm.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -43,49 +44,41 @@ document.addEventListener("DOMContentLoaded", function() {
     function register(userID, userName, userEmail, userRole){
         const appendNewRow = document.createElement('tr');
         appendNewRow.innerHTML = '<td class="p-1 text-center border border-black userID">' + userID + '</td>' +
-        '<td class="p-1 border border-black">' + userName + '</td>' +
-        '<td class="p-1 border border-black">' + userEmail + '</td>' +
-        '<td class="p-1 border border-black">' + userRole + '</td>' +
+        '<td class="p-1 border border-black user-Name">' + userName + '</td>' +
+        '<td class="p-1 border border-black user-Email">' + userEmail + '</td>' +
+        '<td class="p-1 border border-black user-Role">' + userRole + '</td>' +
         '<td class="p-1 border border-black">' +
-        '<button><i class="fa fa-edit" id="editBtn" style="font-size:20px; color:blue"></i></button>' +
-        '<button><i class="fa fa-trash-o p-1" id="deleteBtn" style="font-size:18px;color:red"></i></button>' +
+        '<button class="editBtn"><i class="fa fa-edit" style="font-size:20px; color:blue"></i></button>' +
+        '<button class="deleteBtn"><i class="fa fa-trash-o p-1" style="font-size:18px;color:red"></i></button>' +
         '</td>';
 
-
-
-
-
-
-
         registrationBody.appendChild(appendNewRow);
-    }
 
 
 
-
-
-    // // Add event listener to handle edit button clicks
-    // registrationBody.addEventListener('click', function(event) {
-    //     if (event.target.classList.contains('editBtn')) {
-    //         // Get the row containing the clicked edit button
-    //         const row = event.target.closest('tr');
-    //         // Extract the details from the row
-    //         const userID = row.querySelector('.userID').textContent.trim();
-    //         const userName = row.querySelectorAll('td')[1].textContent.trim();
-    //         const userEmail = row.querySelectorAll('td')[2].textContent.trim();
-    //         const userRole = row.querySelectorAll('td')[3].textContent.trim();
-
-    //         // Populate the form fields with the details for editing
-    //         document.getElementById('nameInput').value = userName;
-    //         document.getElementById('emailInput').value = userEmail;
-    //         document.getElementById('roleInput').value = userRole;
-
-    //         // Optionally, you can store the userID for further processing when saving the edits.
-    //         // For demonstration, I'm just logging it to the console.
-    //         console.log("Editing user with ID:", userID);
-    //     }
-
-
-
+    const deleteButton = appendNewRow.querySelector('.deleteBtn');
+    deleteButton.addEventListener('click', function(event) {
+        const rowToDelete = this.parentElement.parentElement;
+        registrationBody.removeChild(rowToDelete);
     });
 
+
+    const editButton = appendNewRow.querySelector('.editBtn');
+    editButton.addEventListener('click', function(event) {
+        const row = this.closest('tr'); 
+        const userName = row.querySelector('.user-Name').textContent;
+        const userEmail = row.querySelector('.user-Email').textContent; 
+
+
+        document.getElementById('nameInput').value = userName;
+        document.getElementById('emailInput').value = userEmail;
+
+
+        registrationBody.removeChild(row);
+    });
+
+
+
+
+}
+});
