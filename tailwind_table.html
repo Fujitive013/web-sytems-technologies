@@ -7,85 +7,71 @@
         <link rel="stylesheet" href="output.css" />        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body class="bg-slate-200">
+
+<body class="bg-slate-200 flex-wrap">
         <div
             class="flex">
             <div
-                class="m-5 mr-2 mt-10 bg-white p-8 rounded-lg shadow-lg w-3/12 h-96 block items-center"
-            >
-                <form class="inline">
+                class="m-5 mr-2 mt-10 bg-white p-8 rounded-lg shadow-lg w-3/12 h-96 block items-center">
+                <form class="inline" id="registerForm">
                     <div class="h-full">
-                        <h1 class="text-center text-2xl">Create an Account</h1>
-                        <div class="mt-3 w-full">
-                            <label>Name</label>
-                            <input
-                                class="border-black border w-full rounded-md h-10"
-                                type="text"
-                            />
-                        </div>
-                        <div class="mt-3 w-full">
-                            <label>Email</label>
-                            <input
-                                class="border-black border w-full rounded-md h-10"
-                                placeholder="   user@email.com"
-                                type="text"
-                            />
-                        </div>
-                        <div class="mt-3 w-full">
-                            <label>Role</label>
-                            <select
-                                class="w-full border-black rounded-md border h-10"
-                            >
-                                <option value="Admin">Admin</option>
-                                <option value="User">User</option>
-                            </select>
-                        </div>
-                        <div class="mt-5 w-full">
-                            <button
-                                class="bg-blue-500 w-full p-1 text-white font-bold rounded-md"
-                            >
-                                Create Account
-                            </button>
-                        </div>
-                    </div>
-                </form>
+    <h1 class="text-center text-2xl">Create an Account</h1>
+    <div class="mt-3 w-full px-2">
+        <label>Name</label>
+        <div class="border-black border w-full rounded-md h-10">
+            <input id="nameInput"
+                class="h-full w-full rounded-md px-2" type="text"
+            />
+        </div>
+    </div>
+    <div class="mt-3 w-full px-2">
+        <label>Email</label>
+        <div  class="border-black border w-full rounded-md h-10"> 
+        <input id="emailInput"
+        class="h-full w-full rounded-md px-2" type="text"   
+            placeholder="user@email.com"
+            type="text"
+        />
+    </div>
+    </div>
+    <div class="mt-3 w-full px-2">
+        <label>Role</label>
+        <select id="roleInput"
+            class="w-full border-black rounded-md border h-10"
+        >
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+        </select>
+    </div>
+    <div class="mt-5 w-full px-2"> <!-- Added px-2 for padding -->
+        <button id="submit"
+        type="submit"
+            class="bg-blue-500 w-full p-1 h-10 text-white font-bold rounded-md">
+            Create Account
+        </button>
+    </div>
+</div>
+</form>
             </div>
-            <div
-            class="flex m-2 ml-2 mt-10 bg-white rounded-lg shadow-lg w-9/12 h-96">
+            <div class="flex m-2 ml-2 mt-10 bg-white rounded-lg shadow-lg w-9/12 h-96 overflow-auto">
             <div class="items-center w-11/12">
-                <table class="w-full m-7 ml-14 mr-14">
+                <table class="w-full m-7 ml-14 mr-14 table-auto" id="userTable">
                 <thead>
                 <tr>
-                    <th>User List</th>
+                    <th class="text-center text-xl">User List</th>
                 </tr>
                 </thead>
+                <tbody id="tableBody">
                 <tr >
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Actions</th>
+                    <th class=" p-1 border border-black">ID</th>
+                    <th class=" p-1 border border-black">Name</th>
+                    <th class=" p-1 border border-black">Email</th>
+                    <th class=" p-1 border border-black">Role</th>
+                    <th class=" p-1 border border-black">Actions</th>
                 </tr>
-                <tr class="border border-black">
-                    <td class=" p-1 text-center">1</td>
-                    <td class=" p-1 border border-black">Ronalyn Anne Padilla</td>
-                    <td class=" p-1 border border-black">ronalyn.padilla@gmail.com</td>
-                    <td class=" p-1 border border-black">Admin</td>
-                    <td class=" p-1 border border-black">
-                        <button><i class='fa fa-edit' style='font: size 20px;  color:blue'></i></button>
-                        <button><i class="fa fa-trash-o p-1" style="font-size:18px;color:red"></i></button></td>
-                </tr>
-                <tr ><td class=" p-1 text-center border border-black">2</td>
-                    <td class=" p-1 border border-black">Ronalyn Test</td>
-                    <td class=" p-1 border border-black">ronalyn.test@gmail.com</td>
-                    <td class=" p-1 border border-black">User</td>
-                    <td class=" p-1 border border-black">
-                        <button><i class='fa fa-edit' style='font: size 20px; color:blue'></i></button>
-                        <button><i class="fa fa-trash-o p-1" style="font-size:18px;color:red"></i></button>
-                        </td>
-                </tr>
+            </tbody>
             </table></div>
-            
         </div>
-    </body>
+        <script src="tailwind_table.js"></script>
+    </body>   
 </html>
