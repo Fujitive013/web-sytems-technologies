@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // ang email most of the time mag contain og @ and dot
             alert("Please enter a valid email address.");
             return;
-        }
+        } 
 
         // get ang max nga userID each time mag create account
         let maxID = 0;
@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //kung ang original userID is defaulted na 0, nextID gamiton
         if (originalUserID == 0) {
-            register(nextID, userName.value, userEmail.value, userRole.value);
+            appendValues(nextID, userName.value, userEmail.value, userRole.value);
             userName.value = "";
             userEmail.value = "";
             return;
             // kung ang original userID is na retain from deletring/editing ang original userID gamiton
         } else {
-            register(
+            appendValues(
                 originalUserID,
                 userName.value,
                 userEmail.value,
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function register(userID, userName, userEmail, userRole) {
+    function appendValues(userID, userName, userEmail, userRole) {
         const appendNewRow = document.createElement("tr");
         appendNewRow.innerHTML =
             '<td class="p-1 text-center border border-black userID">' +
