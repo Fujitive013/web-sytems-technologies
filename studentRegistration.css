@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 body {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman",
         serif;
@@ -47,7 +46,6 @@ button {
 
 button:hover {
     background-color: #ff8b94;
-=======
 body {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman",
         serif;
@@ -96,5 +94,5 @@ button {
 
 button:hover {
     background-color: #ff8b94;
->>>>>>> Stashed changes
+}
 }
